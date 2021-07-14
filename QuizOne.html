@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Server Details</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" type="text/css" href="QuizOne.css">
+
+  <script>
+    function toggle(source) 
+	{
+      var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      for (var i = 0; i < checkboxes.length; i++) 
+      {
+        checkboxes[i].checked = 'TRUE';
+      }
+    }
+  </script>
+
+</head>
+</html>
+
+<body>
+  <div id="wrapper">
+    <h2>Select server details to display:</h2>
+	<form action="ServerInfo.jsp" method=POST>
+      <div id="options">
+        <input type="checkbox" name="details" value="javaVersion"> Java Version<br/>
+        <input type="checkbox" name="details" value="javaHome"> Java Home Directory<br/>
+        <input type="checkbox" name="details" value="operatingSystem"> Operating System<br/>
+        <input type="checkbox" name="details" value="userName"> User name<br/>
+        <input type="checkbox" name="details" value="userHome"> User Home Directory<br/>
+        <input type="checkbox" name="details" value="userCurrentDirectory"> Current Directory<br/>
+        <input type="checkbox" name="details" value="javaFileName"> Java Filename<br/>
+      </div>  <!-- options -->
+      <div class="buttons">
+		<input type="button" value="select all" class="btn btn-primary btn-sm" onclick="toggle(this);">
+		<input type="submit" value="get system details" class="btn btn-success btn-sm">
+	  </div>	<!-- buttons -->
+	</form>
+	</div>  <!-- wrapper -->
+</body>
+
+</html>
